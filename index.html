@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harikrishna Bhat Daddu — Technical Account Manager</title>
+<meta name="description" content="Harikrishna Bhat Daddu — Technical Account Manager specializing in bot defense, WAAP, and application security.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12181F;
+    --ink-raised:#171E27;
+    --bone:#EDEAE3;
+    --bone-dim:#B9BCC2;
+    --muted:#7C8493;
+    --amber:#C9873F;
+    --amber-dim:#8A5F30;
+    --teal:#5C8C7B;
+    --hair:#2A3340;
+    --max:700px;
+  }
+
+  *{box-sizing:border-box;}
+
+  html{-webkit-font-smoothing:antialiased;}
+
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--bone);
+    font-family:'IBM Plex Sans', -apple-system, sans-serif;
+    font-size:16px;
+    line-height:1.65;
+  }
+
+  a{color:var(--amber);text-decoration:none;border-bottom:1px solid var(--amber-dim);}
+  a:hover{border-bottom-color:var(--amber);}
+
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+
+  /* HERO */
+  header.hero{
+    padding:88px 0 56px;
+    border-bottom:1px solid var(--hair);
+  }
+  header.hero .wrap{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  h1{
+    font-family:'Fraunces', serif;
+    font-optical-sizing:auto;
+    font-weight:500;
+    font-size:clamp(2.1rem, 5vw, 3.1rem);
+    line-height:1.05;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .role-line{
+    font-size:1.15rem;
+    color:var(--amber);
+    font-weight:500;
+  }
+  .contact-line{
+    color:var(--muted);
+    font-size:0.95rem;
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 14px;
+  }
+  .contact-line a{color:var(--bone-dim);border-bottom:1px solid var(--hair);}
+  .contact-line a:hover{color:var(--amber);border-bottom-color:var(--amber-dim);}
+
+  /* SECTIONS */
+  section{padding:52px 0;border-bottom:1px solid var(--hair);}
+  section:last-of-type{border-bottom:none;}
+
+  h2{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:1.4rem;
+    margin:0 0 24px;
+    color:var(--bone);
+  }
+
+  .profile p{
+    font-size:1.05rem;
+    color:var(--bone-dim);
+    max-width:62ch;
+    margin:0;
+  }
+
+  /* EXPERIENCE TIMELINE */
+  .role{
+    position:relative;
+    padding-left:26px;
+    margin-bottom:44px;
+  }
+  .role:last-child{margin-bottom:0;}
+  .role::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:6px;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--amber);
+  }
+  .role::after{
+    content:"";
+    position:absolute;
+    left:3px;
+    top:18px;
+    bottom:-44px;
+    width:1px;
+    background:var(--hair);
+  }
+  .role:last-child::after{display:none;}
+
+  .role-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:6px 16px;
+    margin-bottom:2px;
+  }
+  .role-org{
+    font-weight:600;
+    font-size:1.08rem;
+    color:var(--bone);
+  }
+  .role-dates{
+    color:var(--muted);
+    font-size:0.9rem;
+    white-space:nowrap;
+  }
+  .role-title{
+    color:var(--amber);
+    font-size:0.95rem;
+    margin-bottom:14px;
+  }
+  .role ul{
+    margin:0;
+    padding-left:18px;
+    color:var(--bone-dim);
+  }
+  .role li{
+    margin-bottom:9px;
+    font-size:0.97rem;
+  }
+  .role li:last-child{margin-bottom:0;}
+
+  .awards{
+    margin-top:16px;
+    padding-top:14px;
+    border-top:1px dashed var(--hair);
+    color:var(--teal);
+    font-size:0.9rem;
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+  }
+
+  /* SKILLS */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px 40px;
+  }
+  .skill-group h3{
+    font-size:0.78rem;
+    text-transform:none;
+    color:var(--amber);
+    font-weight:600;
+    margin:0 0 8px;
+    letter-spacing:0.01em;
+  }
+  .skill-group p{
+    margin:0;
+    color:var(--bone-dim);
+    font-size:0.93rem;
+    line-height:1.7;
+  }
+
+  /* EDUCATION */
+  .edu-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:4px 16px;
+    padding:14px 0;
+    border-bottom:1px solid var(--hair);
+  }
+  .edu-item:last-child{border-bottom:none;}
+  .edu-degree{color:var(--bone);font-size:0.97rem;}
+  .edu-school{color:var(--muted);font-size:0.9rem;}
+  .edu-year{color:var(--muted);font-size:0.9rem;white-space:nowrap;}
+
+  footer{
+    padding:36px 0 64px;
+    color:var(--muted);
+    font-size:0.85rem;
+  }
+
+  @media (max-width:560px){
+    header.hero{padding:56px 0 40px;}
+    section{padding:40px 0;}
+    .skills-grid{grid-template-columns:1fr;}
+    .role-header{flex-direction:column;gap:2px;}
+  }
+
+  @media print{
+    body{background:#fff;color:#12181F;}
+    a{color:#12181F;border-bottom:none;}
+    header.hero, section{border-color:#ddd;}
+    .role::before{background:#12181F;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Harikrishna Bhat Daddu</h1>
+    <div class="role-line">Technical Account Manager — Bot Defense &amp; Application Security</div>
+    <div class="contact-line">
+      <a href="mailto:hkbhat92@gmail.com">hkbhat92@gmail.com</a>
+      <span>·</span>
+      <span>(+1) 437-258-8821</span>
+      <span>·</span>
+      <span>Toronto, Canada</span>
+      <span>·</span>
+      <a href="https://linkedin.com/in/harikrishna-bhat-daddu-900576118" target="_blank" rel="noopener">linkedin.com/in/harikrishna-bhat-daddu-900576118</a>
+    </div>
+  </div>
+</header>
+
+<section class="profile">
+  <div class="wrap">
+    <h2>Profile</h2>
+    <p>Technical Account Manager with 8+ years across CDN, cloud delivery, and application security, specializing in bot defense, fraud prevention, and Web Application and API Protection (WAAP). Currently managing $4M+ ARR in enterprise accounts at F5 Networks, expanding beyond bot defense into F5 Distributed Cloud (XC) and broader AppSec engagements — WAAP configuration, load balancing, and multi-product delivery. Known for building the technical trust that converts into retention and contract expansion, and for translating field-level customer insight into product and roadmap input.</p>
+  </div>
+</section>
+
+<section class="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+
+    <div class="role">
+      <div class="role-header">
+        <span class="role-org">F5 Networks</span>
+        <span class="role-dates">Dec 2022 – Present</span>
+      </div>
+      <div class="role-title">Technical Account Manager · F5 XC, WAAP &amp; F5 Bot Defense Advanced</div>
+      <ul>
+        <li>Manage $4M+ ARR in enterprise accounts across F5 Bot Defense Advanced (formerly Shape Security) and F5 Distributed Cloud (XC), serving as primary technical and commercial point of contact for assigned customers</li>
+        <li>Onboarded a net-new enterprise customer in 7 business days during an active bot attack — coordinating cross-functional teams across Sales, Engineering, and Product to deliver an emergency deployment under sustained attack conditions</li>
+        <li>Secured a 1-year to 3-year contract expansion from that customer; Sales leadership attributed the renewal upgrade directly to the technical trust built during the engagement</li>
+        <li>Lead F5 Distributed Cloud (XC) engagements including WAAP configuration and load balancer delivery, expanding customer adoption beyond core bot defense into broader application security</li>
+        <li>Drive end-to-end delivery of bot defense, manual fraud prevention, WAAP, and load balancer solutions — from requirements gathering through integration, deployment, and ongoing optimization</li>
+        <li>Act as voice of the customer to internal Product and Engineering teams, translating field observations into actionable feature requests and roadmap inputs</li>
+        <li>Partner with F5 Sales on account growth, renewal strategy, and expansion into adjacent security products; serve as SPOC bridging technical, commercial, and executive stakeholders</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-header">
+        <span class="role-org">Akamai Technologies</span>
+        <span class="role-dates">Jun 2016 – Sept 2022</span>
+      </div>
+      <div class="role-title">Technical Solutions Engineer II (promoted from Associate TSE → TSE → TSE II)</div>
+      <ul>
+        <li>Managed end-to-end technical delivery for North American enterprise customers across CDN, cloud storage, and media streaming platforms</li>
+        <li>Integrated Object Storage services (AWS S3) with Akamai's delivery platform; optimized offload and performance for HTTP/HTTPS traffic</li>
+        <li>Led technical delivery for high-profile live streaming events including the Winter Olympics and FIFA World Cup</li>
+        <li>Served as Subject Matter Expert (SME) for Cloud Storage and Media Streaming products; drove knowledge base development and documentation of best practices</li>
+        <li>Acted as Knowledge-Centered Service (KCS) Coach — trained and mentored engineers on KCS methodology</li>
+        <li>Handled complex technical and managerial escalations across cross-functional teams spanning Engineering, Operations, Professional Services, and Account Management</li>
+      </ul>
+      <div class="awards">
+        <span>★ Support Services Champion Award, Q4 2021</span>
+        <span>★ "One Akamai" recognition for contribution to KCS</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3>Security &amp; Product</h3>
+        <p>Bot Defense, WAAP, WAF, API Security, Fraud Prevention, JavaScript Integration, DDoS Mitigation</p>
+      </div>
+      <div class="skill-group">
+        <h3>F5 &amp; Infrastructure</h3>
+        <p>F5 Distributed Cloud (XC), F5 Bot Defense Advanced, Load Balancing, DNS, SSL/TLS, HTTP/HTTPS, TCP/IP, CDN, AWS S3</p>
+      </div>
+      <div class="skill-group">
+        <h3>Account &amp; Customer Success</h3>
+        <p>Technical Account Management, Executive Stakeholder Management, Escalation Handling, Contract Expansion, Cross-functional Collaboration</p>
+      </div>
+      <div class="skill-group">
+        <h3>Delivery &amp; Process</h3>
+        <p>Solution Delivery, Emergency Deployments, Requirements Gathering, KCS Coaching, Product Feedback Loops</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="education">
+  <div class="wrap">
+    <h2>Education</h2>
+    <div class="edu-item">
+      <span class="edu-degree">Master of Computer Applications — Computer Science<br><span class="edu-school">Visvesvaraya Technological University, Bengaluru</span></span>
+      <span class="edu-year">2016</span>
+    </div>
+    <div class="edu-item">
+      <span class="edu-degree">Bachelor of Computer Applications — Computer Science<br><span class="edu-school">Mangalore University, Mangalore</span></span>
+      <span class="edu-year">2013</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Harikrishna Bhat Daddu · Toronto, Canada
+  </div>
+</footer>
+
+</body>
+</html>
