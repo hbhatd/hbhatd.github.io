@@ -1,340 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Harikrishna Bhat Daddu — Technical Account Manager</title>
-<meta name="description" content="Harikrishna Bhat Daddu — Technical Account Manager specializing in bot defense, WAAP, and application security.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --ink:#12181F;
-    --ink-raised:#171E27;
-    --bone:#EDEAE3;
-    --bone-dim:#B9BCC2;
-    --muted:#7C8493;
-    --amber:#C9873F;
-    --amber-dim:#8A5F30;
-    --teal:#5C8C7B;
-    --hair:#2A3340;
-    --max:700px;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#060a10">
+  <meta name="description" content="Harikrishna Bhat Daddu — Technical Account Manager specializing in bot defense and application security.">
+  <title>Harikrishna Bhat Daddu — Application Security</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#060a10; --surface:#0b111a; --line:rgba(184,215,237,.16); --ink:#f0f6fb; --soft:#a8bac9; --dim:#708394; --cyan:#68e6ff; --blue:#4276ff; --mint:#80ffd1; --max:1160px; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; background:var(--bg); }
+    body { margin:0; overflow-x:hidden; background:var(--bg); color:var(--ink); font-family:Manrope,Arial,sans-serif; font-size:16px; line-height:1.65; }
+    a { color:inherit; text-decoration:none; }
+    a:focus-visible, button:focus-visible { outline:2px solid var(--cyan); outline-offset:4px; }
+    .skip { position:absolute; left:-999px; top:8px; z-index:20; background:var(--cyan); color:#02121a; padding:8px 12px; font-weight:800; }
+    .skip:focus { left:8px; }
+    .shell { width:min(calc(100% - 48px), var(--max)); margin:auto; }
+    .eyebrow { margin:0 0 18px; color:var(--cyan); font:500 .72rem/1.2 'DM Mono',monospace; letter-spacing:.14em; text-transform:uppercase; }
+    .section-heading { max-width:760px; margin:0 0 58px; font-size:clamp(2.45rem,5.3vw,5.1rem); font-weight:700; line-height:.98; letter-spacing:-.07em; }
+    .section-heading em { color:var(--soft); font-style:normal; }
 
-  *{box-sizing:border-box;}
+    .nav { position:fixed; z-index:10; inset:0 0 auto; height:72px; border-bottom:1px solid transparent; transition:.35s ease; }
+    .nav.scrolled { background:rgba(6,10,16,.76); border-color:var(--line); backdrop-filter:blur(18px); }
+    .nav .shell { display:flex; height:100%; align-items:center; justify-content:space-between; }
+    .mark { display:flex; align-items:center; gap:10px; font:500 .73rem 'DM Mono',monospace; letter-spacing:.1em; }
+    .mark i { width:9px; height:9px; border-radius:50%; background:var(--mint); box-shadow:0 0 18px var(--mint); }
+    .nav-links { display:flex; gap:26px; color:var(--soft); font-size:.78rem; font-weight:700; }
+    .nav-links a { transition:color .2s; }.nav-links a:hover { color:var(--cyan); }
 
-  html{-webkit-font-smoothing:antialiased;}
+    .hero { position:relative; min-height:100svh; display:grid; align-items:end; padding:128px 0 64px; isolation:isolate; overflow:hidden; }
+    .hero::before { content:""; position:absolute; z-index:-2; width:760px; height:760px; right:-170px; top:-180px; border-radius:50%; background:radial-gradient(circle,rgba(66,118,255,.18),transparent 67%); filter:blur(12px); }
+    .grid { position:absolute; z-index:-1; inset:0; background-image:linear-gradient(rgba(126,170,203,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(126,170,203,.055) 1px,transparent 1px); background-size:48px 48px; mask-image:linear-gradient(to bottom,black,transparent 84%); }
+    .signal { position:absolute; right:0; top:14%; width:min(54vw,680px); height:62%; z-index:-1; opacity:.92; }
+    .signal path { fill:none; stroke:var(--cyan); stroke-width:1; stroke-linecap:round; stroke-dasharray:3 12; animation:trace 10s linear infinite; }
+    .signal .faint { stroke:#778bff; opacity:.38; animation-direction:reverse; animation-duration:13s; }
+    .signal circle { fill:var(--cyan); filter:drop-shadow(0 0 8px var(--cyan)); animation:pulse 3s ease-in-out infinite; }
+    .hero-content { position:relative; }
+    .availability { display:inline-flex; align-items:center; gap:9px; margin-bottom:30px; color:var(--soft); font:400 .72rem 'DM Mono',monospace; letter-spacing:.08em; text-transform:uppercase; }
+    .availability::before { content:""; width:7px; height:7px; border-radius:50%; background:var(--mint); box-shadow:0 0 12px var(--mint); }
+    h1 { max-width:1050px; margin:0; font-size:clamp(4.1rem,11.2vw,10rem); font-weight:700; line-height:.83; letter-spacing:-.095em; }
+    h1 span { display:block; color:transparent; -webkit-text-stroke:1px rgba(236,249,255,.78); }
+    .hero-bottom { display:grid; grid-template-columns:1.3fr .7fr; gap:48px; align-items:end; margin-top:50px; }
+    .role { max-width:610px; margin:0; color:var(--soft); font-size:clamp(1rem,1.55vw,1.32rem); line-height:1.5; }
+    .role strong { color:var(--ink); font-weight:600; }
+    .contact { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:8px 20px; color:var(--soft); font:400 .73rem 'DM Mono',monospace; }
+    .contact a { border-bottom:1px solid var(--line); }.contact a:hover { color:var(--cyan); border-color:var(--cyan); }
 
-  body{
-    margin:0;
-    background:var(--ink);
-    color:var(--bone);
-    font-family:'IBM Plex Sans', -apple-system, sans-serif;
-    font-size:16px;
-    line-height:1.65;
-  }
+    .proof { position:relative; padding:28px 0 30px; border-block:1px solid var(--line); background:linear-gradient(90deg,rgba(104,230,255,.06),transparent 42%); }
+    .proof-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:25px; }
+    .metric { border-left:1px solid var(--line); padding-left:22px; }.metric:first-child { border:0; padding-left:0; }
+    .metric strong { display:block; font-size:clamp(1.8rem,3.4vw,3.45rem); letter-spacing:-.08em; line-height:1; }.metric span { color:var(--soft); font-size:.78rem; }
 
-  a{color:var(--amber);text-decoration:none;border-bottom:1px solid var(--amber-dim);}
-  a:hover{border-bottom-color:var(--amber);}
+    section { padding:154px 0; border-bottom:1px solid var(--line); }
+    .intro { display:grid; grid-template-columns:.72fr 1.28fr; gap:70px; }.intro .section-heading { margin:0; }
+    .intro-copy { font-size:clamp(1.12rem,1.75vw,1.48rem); color:var(--soft); line-height:1.6; }.intro-copy b { color:var(--ink); font-weight:600; }
+    .intro-meta { margin-top:36px; color:var(--dim); font:400 .75rem 'DM Mono',monospace; letter-spacing:.03em; }
 
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+    .case { display:grid; grid-template-columns:minmax(180px,.52fr) minmax(0,1.48fr); gap:68px; padding:48px 0; border-top:1px solid var(--line); }.case:last-child { border-bottom:1px solid var(--line); }
+    .company { font-size:1.28rem; font-weight:700; letter-spacing:-.04em; }.company small { display:block; margin-top:5px; color:var(--dim); font:400 .72rem 'DM Mono',monospace; letter-spacing:.04em; }
+    .case h3 { margin:0 0 18px; max-width:740px; font-size:clamp(1.62rem,3.1vw,3.2rem); line-height:1.04; letter-spacing:-.065em; }.case h3 mark { color:var(--cyan); background:transparent; }
+    .case p { max-width:740px; margin:0 0 25px; color:var(--soft); }
+    .tags { display:flex; flex-wrap:wrap; gap:8px; }.tags span { border:1px solid var(--line); padding:6px 9px; color:#c0d2df; font:500 .66rem 'DM Mono',monospace; letter-spacing:.04em; }
+    .award { margin-top:28px; padding:14px 17px; border-left:2px solid var(--mint); color:var(--mint); font-size:.8rem; }
 
-  /* HERO */
-  header.hero{
-    padding:88px 0 56px;
-    border-bottom:1px solid var(--hair);
-  }
-  header.hero .wrap{
-    display:flex;
-    flex-direction:column;
-    gap:18px;
-  }
-  h1{
-    font-family:'Fraunces', serif;
-    font-optical-sizing:auto;
-    font-weight:500;
-    font-size:clamp(2.1rem, 5vw, 3.1rem);
-    line-height:1.05;
-    margin:0;
-    letter-spacing:-0.01em;
-  }
-  .role-line{
-    font-size:1.15rem;
-    color:var(--amber);
-    font-weight:500;
-  }
-  .contact-line{
-    color:var(--muted);
-    font-size:0.95rem;
-    display:flex;
-    flex-wrap:wrap;
-    gap:6px 14px;
-  }
-  .contact-line a{color:var(--bone-dim);border-bottom:1px solid var(--hair);}
-  .contact-line a:hover{color:var(--amber);border-bottom-color:var(--amber-dim);}
+    .capabilities { display:grid; grid-template-columns:repeat(2,1fr); border-top:1px solid var(--line); }.capability { min-height:250px; padding:34px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); background:radial-gradient(circle at 82% 20%,rgba(66,118,255,.13),transparent 30%); }.capability:nth-child(even) { border-right:0; }
+    .capability-n { color:var(--cyan); font:500 .7rem 'DM Mono',monospace; }.capability h3 { margin:52px 0 10px; font-size:1.65rem; line-height:1; letter-spacing:-.05em; }.capability p { margin:0; color:var(--soft); font-size:.91rem; }
+    .education { display:flex; justify-content:space-between; gap:36px; color:var(--soft); font-size:.9rem; }.education p { margin:0; }.education b { color:var(--ink); }.education span { display:block; margin-top:8px; color:var(--dim); font:400 .72rem 'DM Mono',monospace; }
 
-  /* SECTIONS */
-  section{padding:52px 0;border-bottom:1px solid var(--hair);}
-  section:last-of-type{border-bottom:none;}
-
-  h2{
-    font-family:'Fraunces', serif;
-    font-weight:500;
-    font-size:1.4rem;
-    margin:0 0 24px;
-    color:var(--bone);
-  }
-
-  .profile p{
-    font-size:1.05rem;
-    color:var(--bone-dim);
-    max-width:62ch;
-    margin:0;
-  }
-
-  /* EXPERIENCE TIMELINE */
-  .role{
-    position:relative;
-    padding-left:26px;
-    margin-bottom:44px;
-  }
-  .role:last-child{margin-bottom:0;}
-  .role::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:6px;
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    background:var(--amber);
-  }
-  .role::after{
-    content:"";
-    position:absolute;
-    left:3px;
-    top:18px;
-    bottom:-44px;
-    width:1px;
-    background:var(--hair);
-  }
-  .role:last-child::after{display:none;}
-
-  .role-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:baseline;
-    flex-wrap:wrap;
-    gap:6px 16px;
-    margin-bottom:2px;
-  }
-  .role-org{
-    font-weight:600;
-    font-size:1.08rem;
-    color:var(--bone);
-  }
-  .role-dates{
-    color:var(--muted);
-    font-size:0.9rem;
-    white-space:nowrap;
-  }
-  .role-title{
-    color:var(--amber);
-    font-size:0.95rem;
-    margin-bottom:14px;
-  }
-  .role ul{
-    margin:0;
-    padding-left:18px;
-    color:var(--bone-dim);
-  }
-  .role li{
-    margin-bottom:9px;
-    font-size:0.97rem;
-  }
-  .role li:last-child{margin-bottom:0;}
-
-  .awards{
-    margin-top:16px;
-    padding-top:14px;
-    border-top:1px dashed var(--hair);
-    color:var(--teal);
-    font-size:0.9rem;
-    display:flex;
-    flex-direction:column;
-    gap:4px;
-  }
-
-  /* SKILLS */
-  .skills-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:28px 40px;
-  }
-  .skill-group h3{
-    font-size:0.78rem;
-    text-transform:none;
-    color:var(--amber);
-    font-weight:600;
-    margin:0 0 8px;
-    letter-spacing:0.01em;
-  }
-  .skill-group p{
-    margin:0;
-    color:var(--bone-dim);
-    font-size:0.93rem;
-    line-height:1.7;
-  }
-
-  /* EDUCATION */
-  .edu-item{
-    display:flex;
-    justify-content:space-between;
-    align-items:baseline;
-    flex-wrap:wrap;
-    gap:4px 16px;
-    padding:14px 0;
-    border-bottom:1px solid var(--hair);
-  }
-  .edu-item:last-child{border-bottom:none;}
-  .edu-degree{color:var(--bone);font-size:0.97rem;}
-  .edu-school{color:var(--muted);font-size:0.9rem;}
-  .edu-year{color:var(--muted);font-size:0.9rem;white-space:nowrap;}
-
-  footer{
-    padding:36px 0 64px;
-    color:var(--muted);
-    font-size:0.85rem;
-  }
-
-  @media (max-width:560px){
-    header.hero{padding:56px 0 40px;}
-    section{padding:40px 0;}
-    .skills-grid{grid-template-columns:1fr;}
-    .role-header{flex-direction:column;gap:2px;}
-  }
-
-  @media print{
-    body{background:#fff;color:#12181F;}
-    a{color:#12181F;border-bottom:none;}
-    header.hero, section{border-color:#ddd;}
-    .role::before{background:#12181F;}
-  }
-</style>
+    .end { min-height:90svh; display:grid; align-items:center; text-align:center; background:radial-gradient(circle at 50% 40%,rgba(104,230,255,.1),transparent 33%); }.end h2 { max-width:920px; margin:0 auto 34px; font-size:clamp(3.6rem,9vw,8rem); line-height:.88; letter-spacing:-.095em; }.end h2 span { color:var(--cyan); }.end p { margin:0 auto 30px; color:var(--soft); }.button { display:inline-flex; align-items:center; gap:12px; padding:13px 20px; color:#021018; background:var(--cyan); font-size:.8rem; font-weight:800; transition:transform .2s,box-shadow .2s; }.button:hover { transform:translateY(-3px); box-shadow:0 14px 42px rgba(104,230,255,.24); }.button::after { content:'↗'; font-size:1.15rem; }
+    footer { padding:24px 0; border-top:1px solid var(--line); color:var(--dim); font:400 .7rem 'DM Mono',monospace; }.footer-row { display:flex; justify-content:space-between; gap:20px; }
+    .reveal { opacity:0; transform:translateY(22px); transition:opacity .8s ease,transform .8s ease; }.reveal.visible { opacity:1; transform:none; }
+    @keyframes trace { to { stroke-dashoffset:-180; } } @keyframes pulse { 50% { opacity:.35; transform:scale(.75); } }
+    @media (max-width:700px) { .shell { width:min(calc(100% - 36px),var(--max)); }.nav-links { display:none; }.hero { padding-bottom:45px; }.signal { opacity:.48; width:100%; }.hero-bottom,.intro,.case { grid-template-columns:1fr; gap:25px; }.contact { justify-content:flex-start; }.proof-grid { grid-template-columns:1fr; gap:20px; }.metric { border-left:0; padding-left:0; }.section-heading { margin-bottom:36px; } section { padding:94px 0; }.case { padding:36px 0; }.capabilities { grid-template-columns:1fr; }.capability,.capability:nth-child(even) { min-height:auto; padding:28px 0; border-right:0; }.capability h3 { margin-top:36px; }.education { display:block; }.education p + p { margin-top:24px; }.end { min-height:75svh; }.footer-row { display:block; }.footer-row span + span { display:block; margin-top:7px; } }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; }.signal path,.signal circle { animation:none; }.reveal { opacity:1; transform:none; transition:none; } }
+    @media print { .nav,.signal,.grid,.end { display:none; } body { background:white; color:#101820; font-size:11pt; }.hero { min-height:0; padding:0 0 24px; }.hero::before { display:none; } h1 { color:#101820; font-size:42pt; } h1 span { color:#101820; -webkit-text-stroke:0; }.role,.intro-copy,.case p,.capability p { color:#344653; }.proof,section,footer { border-color:#b9c5cb; }.case h3 mark,.eyebrow { color:#0d6577; }.proof { background:none; }.capability { background:none; }.section-heading { font-size:28pt; }.end { min-height:0; padding:45px 0; display:block; text-align:left; }.end h2 { font-size:34pt; }.button { color:#101820; border:1px solid #101820; background:transparent; }.contact { justify-content:flex-start; } }
+  </style>
 </head>
 <body>
-
-<header class="hero">
-  <div class="wrap">
-    <h1>Harikrishna Bhat Daddu</h1>
-    <div class="role-line">Technical Account Manager — Bot Defense &amp; Application Security</div>
-    <div class="contact-line">
-      <a href="mailto:hkbhat92@gmail.com">hkbhat92@gmail.com</a>
-      <span>·</span>
-      <span>(+1) 437-258-8821</span>
-      <span>·</span>
-      <span>Toronto, Canada</span>
-      <span>·</span>
-      <a href="https://linkedin.com/in/harikrishna-bhat-daddu-900576118" target="_blank" rel="noopener">linkedin.com/in/harikrishna-bhat-daddu-900576118</a>
-    </div>
-  </div>
-</header>
-
-<section class="profile">
-  <div class="wrap">
-    <h2>Profile</h2>
-    <p>Technical Account Manager with 8+ years across CDN, cloud delivery, and application security, specializing in bot defense, fraud prevention, and Web Application and API Protection (WAAP). Currently managing $4M+ ARR in enterprise accounts at F5 Networks, expanding beyond bot defense into F5 Distributed Cloud (XC) and broader AppSec engagements — WAAP configuration, load balancing, and multi-product delivery. Known for building the technical trust that converts into retention and contract expansion, and for translating field-level customer insight into product and roadmap input.</p>
-  </div>
-</section>
-
-<section class="experience">
-  <div class="wrap">
-    <h2>Experience</h2>
-
-    <div class="role">
-      <div class="role-header">
-        <span class="role-org">F5 Networks</span>
-        <span class="role-dates">Dec 2022 – Present</span>
-      </div>
-      <div class="role-title">Technical Account Manager · F5 XC, WAAP &amp; F5 Bot Defense Advanced</div>
-      <ul>
-        <li>Manage $4M+ ARR in enterprise accounts across F5 Bot Defense Advanced (formerly Shape Security) and F5 Distributed Cloud (XC), serving as primary technical and commercial point of contact for assigned customers</li>
-        <li>Onboarded a net-new enterprise customer in 7 business days during an active bot attack — coordinating cross-functional teams across Sales, Engineering, and Product to deliver an emergency deployment under sustained attack conditions</li>
-        <li>Secured a 1-year to 3-year contract expansion from that customer; Sales leadership attributed the renewal upgrade directly to the technical trust built during the engagement</li>
-        <li>Lead F5 Distributed Cloud (XC) engagements including WAAP configuration and load balancer delivery, expanding customer adoption beyond core bot defense into broader application security</li>
-        <li>Drive end-to-end delivery of bot defense, manual fraud prevention, WAAP, and load balancer solutions — from requirements gathering through integration, deployment, and ongoing optimization</li>
-        <li>Act as voice of the customer to internal Product and Engineering teams, translating field observations into actionable feature requests and roadmap inputs</li>
-        <li>Partner with F5 Sales on account growth, renewal strategy, and expansion into adjacent security products; serve as SPOC bridging technical, commercial, and executive stakeholders</li>
-      </ul>
-    </div>
-
-    <div class="role">
-      <div class="role-header">
-        <span class="role-org">Akamai Technologies</span>
-        <span class="role-dates">Jun 2016 – Sept 2022</span>
-      </div>
-      <div class="role-title">Technical Solutions Engineer II (promoted from Associate TSE → TSE → TSE II)</div>
-      <ul>
-        <li>Managed end-to-end technical delivery for North American enterprise customers across CDN, cloud storage, and media streaming platforms</li>
-        <li>Integrated Object Storage services (AWS S3) with Akamai's delivery platform; optimized offload and performance for HTTP/HTTPS traffic</li>
-        <li>Led technical delivery for high-profile live streaming events including the Winter Olympics and FIFA World Cup</li>
-        <li>Served as Subject Matter Expert (SME) for Cloud Storage and Media Streaming products; drove knowledge base development and documentation of best practices</li>
-        <li>Acted as Knowledge-Centered Service (KCS) Coach — trained and mentored engineers on KCS methodology</li>
-        <li>Handled complex technical and managerial escalations across cross-functional teams spanning Engineering, Operations, Professional Services, and Account Management</li>
-      </ul>
-      <div class="awards">
-        <span>★ Support Services Champion Award, Q4 2021</span>
-        <span>★ "One Akamai" recognition for contribution to KCS</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="skills">
-  <div class="wrap">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-group">
-        <h3>Security &amp; Product</h3>
-        <p>Bot Defense, WAAP, WAF, API Security, Fraud Prevention, JavaScript Integration, DDoS Mitigation</p>
-      </div>
-      <div class="skill-group">
-        <h3>F5 &amp; Infrastructure</h3>
-        <p>F5 Distributed Cloud (XC), F5 Bot Defense Advanced, Load Balancing, DNS, SSL/TLS, HTTP/HTTPS, TCP/IP, CDN, AWS S3</p>
-      </div>
-      <div class="skill-group">
-        <h3>Account &amp; Customer Success</h3>
-        <p>Technical Account Management, Executive Stakeholder Management, Escalation Handling, Contract Expansion, Cross-functional Collaboration</p>
-      </div>
-      <div class="skill-group">
-        <h3>Delivery &amp; Process</h3>
-        <p>Solution Delivery, Emergency Deployments, Requirements Gathering, KCS Coaching, Product Feedback Loops</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="education">
-  <div class="wrap">
-    <h2>Education</h2>
-    <div class="edu-item">
-      <span class="edu-degree">Master of Computer Applications — Computer Science<br><span class="edu-school">Visvesvaraya Technological University, Bengaluru</span></span>
-      <span class="edu-year">2016</span>
-    </div>
-    <div class="edu-item">
-      <span class="edu-degree">Bachelor of Computer Applications — Computer Science<br><span class="edu-school">Mangalore University, Mangalore</span></span>
-      <span class="edu-year">2013</span>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    Harikrishna Bhat Daddu · Toronto, Canada
-  </div>
-</footer>
-
+  <a class="skip" href="#content">Skip to content</a>
+  <nav class="nav" aria-label="Main navigation"><div class="shell"><a class="mark" href="#top"><i aria-hidden="true"></i> HKB / SECURITY</a><div class="nav-links"><a href="#work">Work</a><a href="#expertise">Expertise</a><a href="#contact">Contact</a></div></div></nav>
+  <header class="hero" id="top"><div class="grid" aria-hidden="true"></div><svg class="signal" viewBox="0 0 680 600" aria-hidden="true"><path d="M10 498C160 464 139 149 321 200s92 339 326 55"/><path class="faint" d="M20 195c205 123 208-89 376 55s110 209 260 81"/><path class="faint" d="M85 567c84-204 274-16 366-158S476 78 650 10"/><circle cx="321" cy="200" r="4"/><circle cx="396" cy="250" r="3"/><circle cx="451" cy="409" r="4"/></svg><div class="shell hero-content"><div class="availability">Securing the digital edge</div><h1>Harikrishna<br><span>Bhat Daddu</span></h1><div class="hero-bottom"><p class="role"><strong>Technical Account Manager</strong> at the intersection of bot defense, application security, and enterprise growth.</p><div class="contact"><a href="mailto:hkbhat92@gmail.com">hkbhat92@gmail.com</a><span>Toronto, Canada</span><a href="https://linkedin.com/in/harikrishna-bhat-daddu-900576118" target="_blank" rel="noopener">LinkedIn ↗</a></div></div></div></header>
+  <main id="content">
+    <section class="proof"><div class="shell proof-grid"><div class="metric"><strong>$4M+</strong><span>enterprise ARR managed</span></div><div class="metric"><strong>7 days</strong><span>to deploy under active attack</span></div><div class="metric"><strong>3 years</strong><span>contract expansion secured</span></div></div></section>
+    <section><div class="shell intro reveal"><div><p class="eyebrow">01 / The mission</p><h2 class="section-heading">Make critical systems <em>harder to break.</em></h2></div><div><p class="intro-copy">With <b>8+ years across CDN, cloud delivery, and application security,</b> I help enterprise teams turn urgent, complex security problems into resilient systems—and the technical trust that keeps partnerships growing.</p><p class="intro-meta">BOT DEFENSE · WAAP · API SECURITY · FRAUD PREVENTION · ENTERPRISE DELIVERY</p></div></div></section>
+    <section id="work"><div class="shell"><p class="eyebrow">02 / Selected work</p><h2 class="section-heading reveal">Pressure reveals <em>how a partner performs.</em></h2><article class="case reveal"><div class="company">F5 Networks<small>DEC 2022 — PRESENT</small></div><div><h3>Defended a new enterprise customer <mark>while the attack was happening.</mark></h3><p>Coordinated Sales, Engineering, and Product to deliver bot-defense protection in seven business days during an active attack. The trust built in that moment led directly to a one-year-to-three-year contract expansion.</p><div class="tags"><span>F5 DISTRIBUTED CLOUD</span><span>WAAP</span><span>BOT DEFENSE</span><span>LOAD BALANCING</span><span>EXECUTIVE ALIGNMENT</span></div></div></article><article class="case reveal"><div class="company">Akamai Technologies<small>JUN 2016 — SEP 2022</small></div><div><h3>Delivered at the scale of <mark>the world’s biggest moments.</mark></h3><p>Led technical delivery for North American enterprise customers across CDN, cloud storage, and media streaming, including the Winter Olympics and FIFA World Cup. Progressed from Associate TSE to TSE II while becoming an SME, mentor, and escalation leader.</p><div class="tags"><span>CDN</span><span>AWS S3</span><span>LIVE STREAMING</span><span>KCS COACHING</span><span>ESCALATION MANAGEMENT</span></div><div class="award">Support Services Champion Award, Q4 2021 · “One Akamai” recognition for KCS</div></div></article></div></section>
+    <section id="expertise"><div class="shell"><p class="eyebrow">03 / Operating system</p><h2 class="section-heading reveal">Technical depth. <em>Human clarity.</em></h2><div class="capabilities reveal"><div class="capability"><span class="capability-n">01 / PROTECT</span><h3>Security that holds.</h3><p>Bot defense, WAAP, WAF, API security, fraud prevention, DDoS mitigation, and JavaScript integration.</p></div><div class="capability"><span class="capability-n">02 / DELIVER</span><h3>Complexity made operational.</h3><p>Requirements, integrations, emergency deployments, solution delivery, and post-launch optimization.</p></div><div class="capability"><span class="capability-n">03 / GROW</span><h3>Trust that compounds.</h3><p>Executive stakeholder management, account strategy, renewals, technical advocacy, and expansion.</p></div><div class="capability"><span class="capability-n">04 / CONNECT</span><h3>Signals into strategy.</h3><p>Voice-of-customer insight that connects field observations with Product, Engineering, and roadmap decisions.</p></div></div></div></section>
+    <section><div class="shell"><p class="eyebrow">04 / Foundations</p><div class="education reveal"><p><b>Master of Computer Applications — Computer Science</b><br>Visvesvaraya Technological University, Bengaluru<span>2016</span></p><p><b>Bachelor of Computer Applications — Computer Science</b><br>Mangalore University, Mangalore<span>2013</span></p></div></div></section>
+    <section class="end" id="contact"><div class="shell reveal"><p class="eyebrow">05 / Connect</p><h2>Let’s secure <span>what matters.</span></h2><p>Open to senior technical account management and customer-facing application security leadership opportunities.</p><a class="button" href="mailto:hkbhat92@gmail.com">Start a conversation</a></div></section>
+  </main>
+  <footer><div class="shell footer-row"><span>© 2026 HARIKRISHNA BHAT DADDU</span><span>TORONTO, CANADA · BUILT FOR THE DIGITAL EDGE</span></div></footer>
+  <script>
+    const nav=document.querySelector('.nav');
+    addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>16),{passive:true});
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(element=>observer.observe(element));
+  </script>
 </body>
 </html>
